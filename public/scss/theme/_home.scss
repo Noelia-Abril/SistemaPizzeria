@@ -1,0 +1,677 @@
+/* =================================== */
+/*  Homepage Styles
+/* =================================== */
+
+.section-gap {
+    padding: 120px 0;
+}
+
+
+.alert-msg {
+    color: #fff;
+}
+
+#logo{
+    padding-left:15px;
+}
+#nav-menu-container{
+    padding-right:15px;
+}
+
+
+.primary-btn {
+    background: $primary-color;
+    line-height: 42px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: none;
+    color: $white;
+    display: inline-block;
+    font-size:14px;
+    font-weight: 500;
+    position: relative;
+    text-transform:uppercase;
+    @include transition();
+    cursor: pointer;
+    position: relative;
+    &:focus {
+        outline: none;
+    }
+    span {
+        color: $white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-60%);
+        right: 30px;
+        @include transition();
+    }
+    &:hover {
+        color: $white;
+        span {
+            color: $white;
+            right: 20px;
+        }
+    }
+    &.white {
+        border: 1px solid $white;
+        color: $white;
+        span {
+            color: $white;
+        }
+        &:hover {
+            background: $white;
+            color: $primary-color;
+            span {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.section-title {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    h1 {
+        margin-bottom: 10px;
+    }
+}
+
+/*-------- Start Banner Area ------------*/
+
+.banner-area {
+    background:url(../img/hero-bg.jpg) center center/cover;
+    background-size:cover;
+    @media(max-width:767px){
+        height:767px!important;
+    }
+}
+
+.banner-content{
+    @media(max-width:1024px){
+        margin-top:100px;
+    }
+    @media(max-width:736px)and (min-width: 415px){
+        margin-top:240px;
+    }
+    margin-top:100px;
+    h6{
+        text-transform:uppercase;
+        font-weight:300;
+        letter-spacing:2px;
+    }
+    h1{
+        font-size:60px;
+        font-weight:700;
+        margin:20px 0;
+        @media(max-width:767px){
+            font-size:40px;
+        }
+    }
+    p{
+        max-width:515px;
+        margin-bottom:30px;
+    }
+    .primary-btn{
+        &:hover{
+            background:$black;
+            color:$white;
+        }
+    }
+
+}
+
+
+
+
+
+/*-------- End Banner Area ------------*/
+
+/*-------- Start home-about Area ------------*/
+
+.home-about-left{
+    p{
+        margin:20px 0;
+        max-width:490px;
+    }
+    .primary-btn{
+        &:hover{
+            box-shadow: 0px 20px 20px 0px rgba(245, 63, 81, 0.2);
+        }
+    }
+    @media(max-width:991px){
+        margin-bottom:50px;
+    }
+}
+
+
+/*-------- End home-about Area ------------*/
+
+
+/*-------- Start Menu Area ------------*/
+
+.menu-area{
+    background:$offwhite;
+}
+
+
+.menu-area {
+    .primary-btn {
+        color: $white;
+        background-color: $primary-color;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.filter-wrap{
+    background:$white;
+    border-radius:10px;
+    box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.2);
+}
+
+.menu-area .filters {
+    text-align: center;
+}
+
+.menu-area .filters  {
+    padding: 0;
+    overflow:hidden;
+}
+
+.filter-wrap{
+    display: table;
+    li {
+        display: table-cell;
+        @media(max-width:414px){
+            display:block!important;
+        }        
+        border-right:1px solid #edf6ff;
+        &:last-child{
+            border: none;
+        }
+    }
+}
+
+
+.menu-area .filters  li {
+    padding: 40px 0px;
+    @media(max-width:768px){
+        padding:20px 0px; 
+    }
+    @media(max-width:767px){
+        padding: 12px 0px;
+        font-size: 10px;
+    }
+    max-width:184px;
+    @media(max-width:414px){
+        max-width:100%!important;
+    }
+    cursor: pointer;
+    position: relative;
+    color: $black;
+    font-size:12px;
+    font-weight: 500;
+    &:last-child{
+        border-right:none;
+    }
+}
+
+
+.menu-area .filters  li.active {
+    color: $white;
+    background:$primary-color;
+}
+
+.menu-area .filters-content {
+    margin-top: 50px;
+}
+
+.menu-area .filters-content .show {
+    opacity: 1;
+    visibility: visible;
+    transition: all 350ms;
+}
+
+.menu-area .filters-content .hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 350ms;
+}
+
+.menu-area .filters-content .item {
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.menu-area .filters-content .item img {
+    border-radius: 10px;
+}
+
+.menu-area .filters-content  .p-inner {
+    padding: 20px 0px;
+    text-align:center;
+}
+
+
+.menu-area .filters-content .item .p-inner .cat {
+    font-size: 13px;
+}
+
+.menu-area .filters-content .item img {
+    width: 100%;
+}
+
+.single-menu{
+    background:$white;
+    border-radius:10px;
+    padding:30px;
+    margin-top:20px;
+    .title-wrap{
+        margin-bottom:20px;
+    }
+    p{
+        margin-bottom:0px;
+        max-width:392px;
+    }
+    .price{
+        color:$primary-color;
+    }
+}
+
+
+
+/*-------- End Menu Area ------------*/
+
+
+/*--------- start reservation Area -------------*/
+
+.reservation-area{
+    background:url(../img/reservation-bg.jpg) no-repeat center/cover;
+    .overlay-bg{
+        background:rgba(#111618, 0.75);
+    }
+    .reservation-right,.reservation-left{
+        position:relative;
+    }
+    .reservation-right{
+        .form-wrap{
+            background:$white;
+            padding:100px 40px;
+            .form-control{
+                border-radius:0px;
+                margin-bottom:10px;
+                border-color:#eeeeee;
+                font-size: 13px;
+                font-weight:300;
+                padding:0.575rem 0.75rem;
+                color:#999999;
+                &:focus{
+                    box-shadow:none;
+                }
+            }
+            .nice-select{
+                border:1px solid #eeeeee;
+            }  
+        }
+        .primary-btn{
+            text-transform:capitalize!important;
+            @include transition();
+            &:hover{
+                box-shadow: -14.142px 14.142px 20px 0px rgba(244, 47, 44, 0.2);
+            }
+        }
+
+        .nice-select {
+            padding-left: 12px;
+            padding-right: 0px;
+            .list {
+                border:1px solid #eee;
+                .option {
+                    padding-left:12px;
+                }
+            }
+        }
+
+
+        @media(max-width:991px){
+            margin-top:50px;
+        }
+    }
+}
+
+
+/*--------- end reservation Area -------------*/
+
+
+/*-------- Start Gallery Area ------------*/
+
+.gallery-area{
+    background:$offwhite;
+}
+
+
+.gallery-area {
+    .primary-btn {
+        color: $white;
+        background-color: $primary-color;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.filter-wrap{
+    background:$white;
+    border-radius:10px;
+    box-shadow: 0px 10px 30px 0px rgba(153, 153, 153, 0.2);
+}
+
+.gallery-area .filters {
+    text-align: center;
+}
+
+.gallery-area .filters  {
+    padding: 0;
+    overflow:hidden;
+}
+
+.filter-wrap{
+    display: table;
+    li {
+        display: table-cell;
+        border-right:1px solid #edf6ff;
+        &:last-child{
+            border: none;
+        }
+    }
+}
+
+
+
+.gallery-area .filters  li {
+    padding: 40px 0px;
+    @media(max-width:768px){
+        padding:20px 0px; 
+    }    
+    @media(max-width:767px){
+        padding: 12px 0px;
+        font-size: 10px;
+    }    
+    max-width:184px;
+    cursor: pointer;
+    position: relative;
+    color: $black;
+    font-size:12px;
+    font-weight: 500;
+    &:last-child{
+        border-right:none;
+    }
+}
+
+
+.gallery-area .filters  li.active {
+    color: $white;
+    background:$primary-color;
+}
+
+.gallery-area .filters-content {
+    margin-top: 50px;
+}
+
+.gallery-area .filters-content .show {
+    opacity: 1;
+    visibility: visible;
+    transition: all 350ms;
+}
+
+.gallery-area .filters-content .hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 350ms;
+}
+
+.gallery-area .filters-content .item {
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.gallery-area .filters-content .item img {
+    border-radius: 10px;
+}
+
+
+.gallery-area .filters-content  .p-inner {
+    padding: 20px 0px;
+    text-align:center;
+}
+
+
+.gallery-area .filters-content .item .p-inner .cat {
+    font-size: 13px;
+}
+
+.gallery-area .filters-content .item img {
+    width: 100%;
+}
+
+
+
+
+.gallery-area .filters-content {
+    margin-top: 50px;
+}
+
+.gallery-area .filters-content .show {
+    opacity: 1;
+    visibility: visible;
+    transition: all 350ms;
+}
+
+.gallery-area .filters-content .hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 350ms;
+}
+
+.gallery-area .filters-content .item {
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.gallery-area .filters-content .item img {
+    border-radius: 10px;
+}
+
+.gallery-area .filters-content  .p-inner {
+    padding: 20px 0px;
+    text-align:center;
+}
+
+
+.gallery-area .filters-content .item .p-inner .cat {
+    font-size: 13px;
+}
+
+.gallery-area .filters-content .item img {
+    width: 100%;
+}
+
+.single-gallery{
+    margin-bottom:30px;
+    img{
+        width:100%;
+    }
+}
+
+
+/*-------- End Gallery Area ------------*/
+
+
+/*--------- start review carusel Area -------------*/
+
+
+.review-area{
+    background:url(../img/review-bg.jpg) no-repeat center/cover;
+    .owl-carousel .owl-item img{
+        width:auto!important;
+    }       
+    .owl-dots {
+        text-align: center;
+        bottom: 5px;
+        margin-top:50px;
+        width: 100%;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .owl-dot {
+        height: 10px;
+        width: 10px;
+        display: inline-block;
+        background: rgba($primary-color, .2);
+        margin-left: 5px;
+        margin-right: 5px;
+        @include transition();
+    }
+
+    .owl-dot.active {
+        @include transition;
+        background:$primary-color;
+    }    
+}
+
+
+.single-review{
+    text-align:center;
+    img{
+        margin-right:auto;
+        margin-left:auto;
+        display:block;
+    }
+    h4{
+        margin-top:20px;
+    }
+    p{
+        margin-top: 20px;
+        max-width:555px;
+        margin-right:auto;
+        margin-left:auto;
+        display:block;  
+        font-style: italic;      
+    }
+    .star{
+        .checked {
+            color: #ffc000;
+        }
+    }
+}
+
+
+/*--------- end review carusel Area -------------*/
+
+
+/*--------- start blog Area -------------*/
+
+.blog-area{
+
+}
+
+.single-blog{
+
+    .thumb{
+        overflow: hidden;
+        img{
+            width:100%;
+            @include transition();
+        }
+    }
+    &:hover{
+        img{
+            transform:scale(1.1);
+        }
+        h4{
+            color:$primary-color;
+        }
+    }
+    h4{
+        margin-bottom:12px;
+        @include transition();
+    }
+    a{
+        color:$black;
+    }
+    .date{
+        background-color: #000;
+        color: #fff;
+        font-weight:100;
+        padding: 2px 15px;
+        width: 115px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    @media(max-width:991px){
+        margin-bottom:30px;
+    }
+}
+
+.meta-bottom{
+
+}
+
+/*--------- end blog Area -------------*/
+
+
+/*-------- Start Common Page Style   -------------*/
+
+.link-nav {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.about-banner {
+   background:url(../img/top-banner.jpg) no-repeat bottom right/cover;
+   background-size:cover;
+   .overlay-bg{
+    background: rgba(#04091e,.40);
+   }
+}
+
+.about-content {
+    margin-top: 185px;
+    padding: 90px 0px;
+    text-align: center;
+    h1 {
+        font-size: 36px;
+        font-weight: 600;
+    }
+    a {
+        color: $white;
+        font-weight: 300;
+        font-size: 14px;
+    }
+    .lnr {
+        margin: 0px 10px;
+        font-weight: 600;
+    }
+}
+
+
+/*-------- End Common Page Style   -------------*/
+
+
