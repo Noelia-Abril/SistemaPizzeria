@@ -38,8 +38,6 @@ class ClienteController extends Controller
         //todos los atributos de la tabla
         $cliente->CI=$request->get('CI');
         $cliente->Nombre=$request->get('Nombre');
-        //$categoria->descripcion=$request->get('descripcion');
-        //$categoria->condicion='1';
         $cliente->save();
         return Redirect::to('almacen/cliente');
     }
@@ -56,7 +54,6 @@ class ClienteController extends Controller
         $cliente=Cliente::findOrFail($id);
         $cliente->CI=$request->get('CI');
         $cliente->Nombre=$request->get('Nombre');
-        //$categoria->descripcion=$request->get('descripcion');
         $cliente->update();
         return Redirect::to('almacen/cliente');
     }

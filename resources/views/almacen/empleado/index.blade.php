@@ -2,7 +2,7 @@
 @section('contenido')
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<h3>Listado de Empleados<a href="empleado/create"><button class="btn btn-success">Nuevo</button></a></h3>
+		<h3>Listado de Empleados <a href="empleado/create"><button class="btn btn-success">Nuevo</button></a>   <a href="../ReporteEmpleado.php"><button class="btn btn-info">Reporte de Empleados</button></a></h3>
 		<br>
 		@include('almacen.empleado.search')
 	</div>
@@ -25,7 +25,7 @@
 					<td>{{ $em->CI}}</td>
 					<td>{{ $em->Nombre}}</td>
 					<td>{{ $em->Cargo}}</td>
-					<td>{{ $em->id}}</td>
+					<td>{{ $em->NombreUsuario}}</td>
 					<td>
 						<a href="{{URL::action('EmpleadoController@edit',$em->cod_empleado)}}"><button class="btn btn-info">Editar</button></a>
 						<a href="" data-target="#modal-delete-{{$em->cod_empleado}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>

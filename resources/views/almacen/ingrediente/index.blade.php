@@ -2,7 +2,7 @@
 @section('contenido')
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<h3>Listado de Ingredientes <a href="ingrediente/create"><button class="btn btn-success">Nuevo</button></a></h3>
+		<h3>Listado de Ingredientes <a href="ingrediente/create"><button class="btn btn-success">Nuevo</button></a>   <a href="../ReporteIngrediente.php"><button class="btn btn-info">Reporte Ingredientes</button></a></h3>
 		<br>
 		@include('almacen.ingrediente.search')
 	</div>

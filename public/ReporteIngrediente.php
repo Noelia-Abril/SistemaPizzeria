@@ -1,7 +1,7 @@
 <?php
   require_once('conexion/conexion.php');	
-  $clientes = 'SELECT * FROM cliente ORDER BY Nombre ASC';	
-	$cliente=$mysqli->query($clientes);
+  $ingredientes = 'SELECT * FROM ingrediente ORDER BY Nombre ASC';	
+	$ingrediente=$mysqli->query($ingredientes);
   //include library
   if(isset($_POST['create_pdf']))
   {
@@ -26,19 +26,21 @@ $content = '';
       <table border="1" cellpadding="5">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>CI</th>
+            <th>CÓDIGO</th>
             <th>NOMBRE</th>
+            <th>CANTIDAD</th>
+            <th>PRECIO</th>
           </tr>
         </thead>
 	';
-	while ($cl=$cliente->fetch_assoc()) { 
-			if($cl['CI']!='0'){  $color= '#f5f5f5'; }else{ $color= '#fbb2b2'; }
+	while ($in=$ingrediente->fetch_assoc()) { 
+			if($in['Cantidad']!='0'){  $color= '#f5f5f5'; }else{ $color= '#fbb2b2'; }
 	$content .= '
 		<tr bgcolor="'.$color.'">
-            <td>'.$cl['IdCliente'].'</td>
-            <td>'.$cl['CI'].'</td>
-            <td>'.$cl['Nombre'].'</td>
+            <td>'.$in['idIngrediente'].'</td>
+            <td>'.$in['Nombre'].'</td>
+            <td>'.$in['Cantidad'].'</td>
+            <td>'.$in['Precio'].'</td>
         </tr>
 	';
 	}
@@ -47,7 +49,7 @@ $content = '';
 	$pdf->writeHTML($content, true, 0, true, 0);
 	$pdf->lastPage();
 //output
-$pdf->Output('RClientes.pdf','I'); 
+$pdf->Output('RIngredientes.pdf','I'); 
 }
 ?>
 
@@ -70,7 +72,7 @@ $pdf->Output('RClientes.pdf','I');
 	<div class="container-fluid">
         <div class="row padding">
         	<div class="col-md-12">
-            	<?php $h1 = "REPORTE DE CLIENTES";  
+            	<?php $h1 = "REPORTE DE INGREDIENTES";  
             	 echo '<h1>'.$h1.'</h1>'
 				?>
             </div>
@@ -79,19 +81,20 @@ $pdf->Output('RClientes.pdf','I');
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>CI</th>
+            <th>Código</th>
             <th>Nombre</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
           </tr>
         </thead>
         <tbody>
         <?php 
-			while ($cl=$cliente->fetch_assoc()) {   ?>
-          <tr class="<?php if($cl['CI']!='0'){ echo 'active';}else{ echo 'danger';} ?>">
-            <td><?php echo $cl['IdCliente']; ?></td>
-            <td><?php echo $cl['CI']; ?></td>
-            <td><?php echo $cl['Nombre']; ?></td>
-            
+			while ($in=$ingrediente->fetch_assoc()) {   ?>
+          <tr class="<?php if($in['Cantidad']!='0'){ echo 'active';}else{ echo 'danger';} ?>">
+            <td><?php echo $in['idIngrediente']; ?></td>
+            <td><?php echo $in['Nombre']; ?></td>
+            <td><?php echo $in['Cantidad']; ?></td>
+            <td><?php echo $in['Precio']; ?></td>
           </tr>
          <?php } ?>
         </tbody>

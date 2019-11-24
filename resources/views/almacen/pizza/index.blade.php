@@ -2,7 +2,7 @@
 @section('contenido2')
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		<h3>Listado de Pizzas <a href="pizza/create"><button class="btn btn-success">Nuevo</button></a></h3>
+		<h3>Listado de Pizzas <a href="pizza/create"><button class="btn btn-success">Nuevo</button></a>   <a href="../ReportePizza.php"><button class="btn btn-info">Reporte de Pizzas</button></a></h3>
 		<br>
 		@include('almacen.pizza.search')
 	</div>

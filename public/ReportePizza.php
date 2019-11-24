@@ -1,7 +1,7 @@
 <?php
   require_once('conexion/conexion.php');	
-  $clientes = 'SELECT * FROM cliente ORDER BY Nombre ASC';	
-	$cliente=$mysqli->query($clientes);
+  $pizzas = 'SELECT * FROM pizza ORDER BY PNombre ASC';	
+	$pizza=$mysqli->query($pizzas);
   //include library
   if(isset($_POST['create_pdf']))
   {
@@ -26,19 +26,25 @@ $content = '';
       <table border="1" cellpadding="5">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>CI</th>
+            <th>CÓDIGO</th>
             <th>NOMBRE</th>
+            <th>PRECIO</th>
+            <th>DESCRIPCIÓN</th>
+            <th>EXISTENCIAS</th>
+            <th>ESTADO</th>
           </tr>
         </thead>
 	';
-	while ($cl=$cliente->fetch_assoc()) { 
-			if($cl['CI']!='0'){  $color= '#f5f5f5'; }else{ $color= '#fbb2b2'; }
+	while ($pz=$pizza->fetch_assoc()) { 
+			if($pz['estado']=='Activo'){  $color= '#f5f5f5'; }else{ $color= '#fbb2b2'; }
 	$content .= '
 		<tr bgcolor="'.$color.'">
-            <td>'.$cl['IdCliente'].'</td>
-            <td>'.$cl['CI'].'</td>
-            <td>'.$cl['Nombre'].'</td>
+            <td>'.$pz['Cod_Pz'].'</td>
+            <td>'.$pz['PNombre'].'</td>
+            <td>'.$pz['Precio'].'</td>
+            <td>'.$pz['Descripcion'].'</td>
+            <td>'.$pz['Existencias'].'</td>
+            <td>'.$pz['estado'].'</td>
         </tr>
 	';
 	}
@@ -47,7 +53,7 @@ $content = '';
 	$pdf->writeHTML($content, true, 0, true, 0);
 	$pdf->lastPage();
 //output
-$pdf->Output('RClientes.pdf','I'); 
+$pdf->Output('RPizzas.pdf','I'); 
 }
 ?>
 
@@ -70,7 +76,7 @@ $pdf->Output('RClientes.pdf','I');
 	<div class="container-fluid">
         <div class="row padding">
         	<div class="col-md-12">
-            	<?php $h1 = "REPORTE DE CLIENTES";  
+            	<?php $h1 = "REPORTE DE PIZZAS";  
             	 echo '<h1>'.$h1.'</h1>'
 				?>
             </div>
@@ -79,19 +85,24 @@ $pdf->Output('RClientes.pdf','I');
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>CI</th>
-            <th>Nombre</th>
+            <th>CÓDIGO</th>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+            <th>DESCRIPCIÓN</th>
+            <th>EXISTENCIAS</th>
+            <th>ESTADO</th>
           </tr>
         </thead>
         <tbody>
         <?php 
-			while ($cl=$cliente->fetch_assoc()) {   ?>
-          <tr class="<?php if($cl['CI']!='0'){ echo 'active';}else{ echo 'danger';} ?>">
-            <td><?php echo $cl['IdCliente']; ?></td>
-            <td><?php echo $cl['CI']; ?></td>
-            <td><?php echo $cl['Nombre']; ?></td>
-            
+			while ($pz=$pizza->fetch_assoc()) {   ?>
+          <tr class="<?php if($pz['estado']=='Activo'){ echo 'active';}else{ echo 'danger';} ?>">
+            <td><?php echo $pz['Cod_Pz']; ?></td>
+            <td><?php echo $pz['PNombre']; ?></td>
+            <td><?php echo $pz['Precio']; ?></td>
+            <td><?php echo $pz['Descripcion']; ?></td>
+            <td><?php echo $pz['Existencias']; ?></td>
+            <td><?php echo $pz['estado']; ?></td>
           </tr>
          <?php } ?>
         </tbody>

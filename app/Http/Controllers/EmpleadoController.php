@@ -21,9 +21,12 @@ class EmpleadoController extends Controller
         if ($request)
         {
             $query=trim($request->get('searchText'));
-            $empleados=DB::table('empleado')->where('Nombre','LIKE','%'.$query.'%')
-            ->where ('CI','!=','0')
-            ->orderBy('cod_empleado','asc')
+            $empleados=DB::table('empleado as e')
+            ->join('users as u','e.id','=','u.id')
+            ->select('e.cod_empleado','e.CI','e.Nombre','e.Cargo','u.name as NombreUsuario')
+            ->where('e.Nombre','LIKE','%'.$query.'%')
+            ->where ('e.CI','!=','0')
+            ->orderBy('e.cod_empleado','asc')
             ->paginate(5);
             return view('almacen.empleado.index',["empleados"=>$empleados,"searchText"=>$query]);
         }
@@ -37,10 +40,9 @@ class EmpleadoController extends Controller
     {
         $empleado=new empleado;
         //$pizza->IdCliente=$request->get('IdCliente')   
-        $empleado->cod_empleado=$request->get('cod_empleado');
         $empleado->CI=$request->get('CI');
         $empleado->Nombre=$request->get('Nombre');
-        $empleado->Cargo=$request->get('Cargo');
+        $empleado->Carrgo=$request->get('Cargo');
         $empleado->id=$request->get('id');
         $empleado->save();
         return Redirect::to('almacen/empleado');
@@ -58,8 +60,6 @@ class EmpleadoController extends Controller
     public function update(EmpleadoFormRequest $request,$id)
     {
         $empleado=Empleado::findOrFail($id); 
-        
-     	$empleado->cod_empleado=$request->get('cod_empleado');
         $empleado->CI=$request->get('CI');
         $empleado->Nombre=$request->get('Nombre');
         $empleado->Cargo=$request->get('Cargo');

@@ -1,7 +1,7 @@
 <?php
   require_once('conexion/conexion.php');	
-  $clientes = 'SELECT * FROM cliente ORDER BY Nombre ASC';	
-	$cliente=$mysqli->query($clientes);
+  $empleados = 'SELECT * FROM empleado ORDER BY Nombre ASC';	
+	$empleado=$mysqli->query($empleados);
   //include library
   if(isset($_POST['create_pdf']))
   {
@@ -26,19 +26,23 @@ $content = '';
       <table border="1" cellpadding="5">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>CÓDIGO</th>
             <th>CI</th>
             <th>NOMBRE</th>
+            <th>CARGO</th>
+            <th>ID USUARIO</th>
           </tr>
         </thead>
 	';
-	while ($cl=$cliente->fetch_assoc()) { 
-			if($cl['CI']!='0'){  $color= '#f5f5f5'; }else{ $color= '#fbb2b2'; }
+	while ($em=$empleado->fetch_assoc()) { 
+			if($em['CI']!='0'){  $color= '#f5f5f5'; }else{ $color= '#fbb2b2'; }
 	$content .= '
 		<tr bgcolor="'.$color.'">
-            <td>'.$cl['IdCliente'].'</td>
-            <td>'.$cl['CI'].'</td>
-            <td>'.$cl['Nombre'].'</td>
+            <td>'.$em['cod_empleado'].'</td>
+            <td>'.$em['CI'].'</td>
+            <td>'.$em['Nombre'].'</td>
+            <td>'.$em['Cargo'].'</td>
+            <td>'.$em['id'].'</td>
         </tr>
 	';
 	}
@@ -47,7 +51,7 @@ $content = '';
 	$pdf->writeHTML($content, true, 0, true, 0);
 	$pdf->lastPage();
 //output
-$pdf->Output('RClientes.pdf','I'); 
+$pdf->Output('REmpleados.pdf','I'); 
 }
 ?>
 
@@ -70,7 +74,7 @@ $pdf->Output('RClientes.pdf','I');
 	<div class="container-fluid">
         <div class="row padding">
         	<div class="col-md-12">
-            	<?php $h1 = "REPORTE DE CLIENTES";  
+            	<?php $h1 = "REPORTE DE EMPLEADOS";  
             	 echo '<h1>'.$h1.'</h1>'
 				?>
             </div>
@@ -79,18 +83,22 @@ $pdf->Output('RClientes.pdf','I');
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Código</th>
             <th>CI</th>
             <th>Nombre</th>
+            <th>Cargo</th>
+            <th>id</th>
           </tr>
         </thead>
         <tbody>
         <?php 
-			while ($cl=$cliente->fetch_assoc()) {   ?>
+			while ($em=$empleado->fetch_assoc()) {   ?>
           <tr class="<?php if($cl['CI']!='0'){ echo 'active';}else{ echo 'danger';} ?>">
-            <td><?php echo $cl['IdCliente']; ?></td>
-            <td><?php echo $cl['CI']; ?></td>
-            <td><?php echo $cl['Nombre']; ?></td>
+            <td><?php echo $em['cod_empleado']; ?></td>
+            <td><?php echo $em['CI']; ?></td>
+            <td><?php echo $em['Nombre']; ?></td>
+            <td><?php echo $em['Cargo']; ?></td>
+            <td><?php echo $em['id']; ?></td>
             
           </tr>
          <?php } ?>
