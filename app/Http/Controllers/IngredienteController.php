@@ -27,7 +27,7 @@ class IngredienteController extends Controller
             ->where('i.Nombre','LIKE','%'.$query.'%')
             ->where ('i.cantidad','!=','0')
             ->orderBy('i.Nombre','asc')
-            ->paginate(7);
+            ->paginate(5);
             return view('almacen.ingrediente.index',["ingredientes"=>$ingredientes,"searchText"=>$query]);
         }
     }

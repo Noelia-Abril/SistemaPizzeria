@@ -75,6 +75,7 @@
                         <li><a href="{{asset('almacen/cliente')}}">Clientes</a></li>
                         <li><a href="{{asset('almacen/pizza')}}">Pizzas</a></li>
                         <li><a href="{{asset('almacen/ingrediente')}}">Ingredientes</a></li>
+                        <li><a href="{{asset('almacen/empleado')}}">Empleados</a></li>
                     </ul>
                   </li>
                   <li><a href="{{asset('acercaDe.html')}}">Acerca De</a></li>

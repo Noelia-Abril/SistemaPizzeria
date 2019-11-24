@@ -18,6 +18,7 @@ Route::resource('almacen/cliente','ClienteController');
 Route::resource('almacen/pizza','PizzaController');
 Route::resource('almacen/ingrediente','IngredienteController');
 Route::resource('almacen/inicio','InicioController');
+Route::resource('almacen/empleado','EmpleadoController');
 
 Route::auth();
 

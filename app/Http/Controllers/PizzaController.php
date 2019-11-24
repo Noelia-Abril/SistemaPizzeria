@@ -26,7 +26,7 @@ class PizzaController extends Controller
             $pizzas=DB::table('pizza')->where('PNombre','LIKE','%'.$query.'%')
             ->where ('estado','=','Activo')
             ->orderBy('PNombre','asc')
-            ->paginate(7);
+            ->paginate(5);
             return view('almacen.pizza.index',["pizzas"=>$pizzas,"searchText"=>$query]);
         }
     }
