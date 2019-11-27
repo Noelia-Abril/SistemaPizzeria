@@ -23,3 +23,4 @@ Route::resource('almacen/empleado','EmpleadoController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
