@@ -21,6 +21,5 @@ Route::resource('almacen/inicio','InicioController');
 Route::resource('almacen/empleado','EmpleadoController');
 Route::get('menu','menuController@index');
 Route::auth();
-
 Route::get('/home', 'HomeController@index');
 
