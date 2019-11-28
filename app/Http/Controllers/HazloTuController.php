@@ -6,11 +6,11 @@ use Illuminate\Http\Request;
 
 use SPizzeria\Http\Requests;
 use SPizzeria\Pizza;
-class menuController extends Controller
+class HazloTuController extends Controller
 {
-   
+    
     function index(){
     	$pizzas=Pizza::all();
-    	return view('pantalla.menu',["pizzas"=>$pizzas]);
+    	return view('pantalla.HazloTu',["pizzas"=>$pizzas]);
     }
 }

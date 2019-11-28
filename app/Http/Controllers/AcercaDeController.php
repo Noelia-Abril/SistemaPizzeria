@@ -8,9 +8,13 @@ use SPizzeria\Http\Requests;
 use SPizzeria\Pizza;
 class AcercaDeController extends Controller
 {
-    //
+	
     function index(){
     	$pizzas=Pizza::all();
     	return view('pantalla.acercaDe',["pizzas"=>$pizzas]);
+    }
+    function insistema(){
+    	$pizzas=Pizza::all();
+    	return view('pantalla.acercaDeSis',["pizzas"=>$pizzas]);
     }
 }

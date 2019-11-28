@@ -4,67 +4,97 @@
 		<!-- Mobile Specific Meta -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Favicon-->
-		<link rel="shortcut icon" href="img/fav.png">
-		<!-- Author Meta -->
-		<meta name="author" content="colorlib">
-		<!-- Meta Description -->
-		<meta name="description" content="">
-		<!-- Meta Keyword -->
-		<meta name="keywords" content="">
-		<!-- meta character set -->
-		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Divino Sapori</title>
+		<link rel="shortcut icon" href="{{asset('img/fav.png')}}">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Divino Sapori</title>
 
-		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
-			<!--
-			CSS
-			============================================= -->
-			<link rel="stylesheet" href="css/linearicons.css">
-			<link rel="stylesheet" href="css/font-awesome.min.css">
-			<link rel="stylesheet" href="css/bootstrap.css">
-			<link rel="stylesheet" href="css/magnific-popup.css">
-			<link rel="stylesheet" href="css/jquery-ui.css">				
-			<link rel="stylesheet" href="css/nice-select.css">							
-			<link rel="stylesheet" href="css/animate.min.css">
-			<link rel="stylesheet" href="css/owl.carousel.css">				
-			<link rel="stylesheet" href="css/main.css">
-		</head>
+    <link href="{{asset('https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet')}}"> 
+      <!--
+      CSS
+      ============================================= -->
+      <link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
+      <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+      <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
+      <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+      <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">       
+      <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">         
+      <link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
+      <link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">        
+      <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    </head>
 		<body>	
 			<header id="header">
+        @if(Auth::user())
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+                  <span class="hidden-xs">Administracion de Cuenta</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                
+                  
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    
+                    <div class="pull-center">
+                      <a href="{{url('/logout')}}" class="btn btn-default btn-flat" >Cerrar Sesion</a>
+
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+          @endif
 				<div class="header-top">
 					<div class="container">
 				  		<div class="row justify-content-center">
 						      <div id="logo">
-						        <a href="index.html"><img src="pizzeria/logoDS.jpeg" alt="" title="" style="width: 90px"/></a>
-						      </div>
-				  		</div>			  					
-					</div>
-				</div>
-				<div class="container main-menu">
-					<div class="row align-items-center justify-content-center d-flex">			
-				      <nav id="nav-menu-container">
-				        <ul class="nav-menu">
-				          <li class="menu-has-children')}}"><a href="">Administracion</a>
+                    <a href="{{asset('index.html')}}"><img src="{{asset('pizzeria/logoDS.jpeg')}}" alt="" title="" style="width: 90px"/></a>
+                  </div>
+              </div>                  
+          </div>
+        </div>
+        <div class="container main-menu">
+          <div class="row align-items-center justify-content-center d-flex">      
+              <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                  @if (Auth::user())
+                  <li class="menu-has-children')}}"><a href="">Administracion</a>
                     <ul>
-                        <li><a href="almacen/cliente">Clientes</a></li>
-                        <li><a href="almacen/pizza">Pizzas</a></li>
-                        <li><a href="almacen/ingrediente">Ingredientes</a></li>
-                        <li><a href="almacen/empleado">Empleados</a></li>
-                  
+                        <li><a href="{{asset('almacen/cliente')}}">Clientes</a></li>
+                        <li><a href="{{asset('almacen/pizza')}}">Pizzas</a></li>
+                        <li><a href="{{asset('almacen/ingrediente')}}">Ingredientes</a></li>
+                        <li><a href="{{asset('almacen/empleado')}}">Empleados</a></li>
                     </ul>
                   </li>
+                      @endif
 
-				          <li><a href="acercaDe.html">Acerca De</a></li>
-				          <li class="menu-has-children"><a href="">Menu</a>
-				            <ul>
-				            	  <li><a href="menu.html">Menu Pizzeria</a></li>
-								  <li><a href="galeria.html">Galeria Menu</a></li>											
-				            </ul>
-				          </li>
-				          <li><a href="almacen/inicio/create">Inicio</a></li>
-				          <li><a href="HazloTu.html">¡Hazlo Tu Mismo!</a></li>	
-				          <li><a href="contacto.html">Contacto</a></li>
+
+                  <li><a href="{{asset('pantalla/acercaDe')}}">Acerca De</a></li>
+                  <li class="menu-has-children"><a href="">Menu</a>
+                    <ul>
+                        <li><a href="{{asset('pantalla/menu')}}">Menu Pizzeria</a></li>
+                  <li><a href="{{asset('pantalla/galeria')}}">Galeria Menu</a></li>                     
+                    </ul>
+                  </li>
+                  <li><a href="{{asset('almacen/inicio/create')}}">Inicio</a></li>
+                  <li><a href="{{asset('pantalla/HazloTu')}}">¡Hazlo Tu Mismo!</a></li> 
+                  <li><a href="{{asset('pantalla/contacto')}}">Contacto</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  
 					</div>
@@ -375,20 +405,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 			</footer>
 			<!-- End footer Area -->	
 
-			<script src="js/vendor/jquery-2.2.4.min.js"></script>
-			<script src="js/popper.min.js"></script>
-			<script src="js/vendor/bootstrap.min.js"></script>			
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
- 			<script src="js/jquery-ui.js"></script>					
-  			<script src="js/easing.min.js"></script>			
-			<script src="js/hoverIntent.js"></script>
-			<script src="js/superfish.min.js"></script>	
-			<script src="js/jquery.ajaxchimp.min.js"></script>
-			<script src="js/jquery.magnific-popup.min.js"></script>						
-			<script src="js/jquery.nice-select.min.js"></script>					
-			<script src="js/owl.carousel.min.js"></script>			
-            <script src="js/isotope.pkgd.min.js"></script>								
-			<script src="js/mail-script.js"></script>	
-			<script src="js/main.js"></script>	
+			<script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
+      <script src="{{asset('js/popper.min.js')}}"></script>
+      <script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>     
+      <script src="{{asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA')}}"></script>    
+      <script src="{{asset('js/jquery-ui.js')}}"></script>          
+        <script src="{{asset('js/easing.min.js')}}"></script>     
+      <script src="{{asset('js/hoverIntent.js')}}"></script>
+      <script src="{{asset('js/superfish.min.js')}}"></script>  
+      <script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
+      <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>            
+      <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>         
+      <script src="{{asset('js/owl.carousel.min.js')}}"></script>     
+            <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>           
+      <script src="{{asset('js/mail-script.js')}}"></script>  
+      <script src="{{asset('js/main.js')}}"></script> 
 		</body>
 	</html>

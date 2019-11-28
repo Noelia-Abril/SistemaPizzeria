@@ -63,6 +63,8 @@
           <div class="row align-items-center justify-content-center d-flex">      
               <nav id="nav-menu-container">
                 <ul class="nav-menu">
+                
+                 @if (Auth::user())
                   <li class="menu-has-children')}}"><a href="">Administracion</a>
                     <ul>
                         <li><a href="{{asset('almacen/cliente')}}">Clientes</a></li>
@@ -71,19 +73,19 @@
                         <li><a href="{{asset('almacen/empleado')}}">Empleados</a></li>
                     </ul>
                   </li>
+                      @endif
 
-                  <li><a href="{{asset('acercaDe.html')}}">Acerca De</a></li>
-                  
-                  <li class="menu-has-children')}}"><a href="">Menu</a>
+
+                  <li><a href="{{asset('pantalla/acercaDe')}}">Acerca De</a></li>
+                  <li class="menu-has-children"><a href="">Menu</a>
                     <ul>
-                        <li><a href="{{asset('menu.html')}}">Menu Pizzeria</a></li>
-                  <li><a href="{{asset('galeria.html')}}">Galeria Menu</a></li>                      
+                        <li><a href="{{asset('pantalla/menu')}}">Menu Pizzeria</a></li>
+                  <li><a href="{{asset('pantalla/galeria')}}">Galeria Menu</a></li>                     
                     </ul>
                   </li>
-                  <li><a href="inicio/create">Inicio</a></li>
-                  <li><a href="{{asset('HazloTu.html')}}">¡Hazlo Tu Mismo!</a></li>  
-
-                  <li><a href="{{asset('contacto.html')}}">Contacto</a></li>
+                  <li><a href="{{asset('almacen/inicio/create')}}">Inicio</a></li>
+                  <li><a href="{{asset('pantalla/HazloTu')}}">¡Hazlo Tu Mismo!</a></li> 
+                  <li><a href="{{asset('pantalla/contacto')}}">Contacto</a></li>
                 </ul>
               </nav><!-- #nav-menu-container -->                      
           </div>

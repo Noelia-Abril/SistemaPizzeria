@@ -40,7 +40,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/login') }}">
                     PIZZERIA DIVINO SAPORI
                 </a>
             </div>
@@ -55,8 +55,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{asset('acercaDe.html') }}">Ingresar como Cliente</a></li>
+                        <li><a href="{{ url('login') }}">Login</a></li>
+                        <li><a href="{{asset('pantalla/acercaDe') }}">Ingresar como Cliente</a></li>
                         <!--
                         <li><a href="{{ url('/register') }}">Registro</a></li>
                         -->
