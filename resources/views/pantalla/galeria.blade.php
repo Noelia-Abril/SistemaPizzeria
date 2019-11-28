@@ -110,7 +110,7 @@
 							<h1 class="text-white">
 								Galeria			
 							</h1>	
-							<p class="text-white link-nav"><a href="acercaDe.html">Principal </a>  <span class="lnr lnr-arrow-right"></span>  <a href="galeria.html"> Galeria</a></p>
+							<p class="text-white link-nav"><a href="{{('acercaDe')}}">Principal </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{('galeria')}}"> Galeria</a></p>
 						</div>	
 					</div>
 				</div>
@@ -139,36 +139,14 @@
      
                     <div class="filters-content">
                         <div class="row grid">
+                        	@foreach( $pizzas as $p)
                             <div class="col-lg-4 col-md-6 col-sm-6 all breakfast">
                             	<div class="single-gallery">
-                            		<img class="img-fluid" src="pizzeria/pepperoni-lovers.jpg" alt="">
-									<a href="blog-single.html"><h4>   PIZZA DE PEPPERONI</h4></a>
+                            		<img class="img-fluid" src="{{asset('imagenes/pizzas/'.$p->Imagen)}}" alt="">
+									<a href="blog-single.html"><h4>   {{$p->PNombre}}</h4></a>
 								</div>	                          
                             </div>                           
-                            <div class="col-lg-4 col-md-6 col-sm-6 all budget-meal">
-                            	<div class="single-gallery">
-                            		<img class="img-fluid" src="pizzeria/cheeseham.jpg" alt="">
-									<a href="blog-single.html"><h4>PIZZA CHEESEHAM</h4></a>
-                            	</div>                            
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 all breakfast">
-                            	<div class="single-gallery">
-                            		<img class="img-fluid" src="pizzeria/bacon-lovers.jpg" alt="">
-									<a href="blog-single.html"><h4>   PIZZA DE BACON</h4></a>
-                            	</div>                            
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 all lunch">
-                            	<div class="single-gallery">
-                            		<img class="img-fluid" src="pizzeria/mexicana.jpg" alt="">
-									<a href="blog-single.html"><h4>   PIZZA MEXICANA</h4></a>
-                            	</div>                            
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-sm-6 all buffet">
-                            	<div class="single-gallery">
-                            		<img class="img-fluid" src="imagenes/bebidas/pepsi-1l.jpg" alt="">
-									<a href="blog-single.html"><h4>   PEPSI 1Lt</h4></a>
-                            	</div>                            
-                            </div>                            
+                             @endforeach                        
                         </div>
                     </div>
                     

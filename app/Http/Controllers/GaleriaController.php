@@ -10,7 +10,7 @@ class GaleriaController extends Controller
 {
     
     function index(){
-    	$pizzas=Pizza::all();
+    	$pizzas=Pizza::all()->where ('estado','=','Activo');
     	return view('pantalla.galeria',["pizzas"=>$pizzas]);
     }
 }

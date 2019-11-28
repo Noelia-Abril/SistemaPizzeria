@@ -13,8 +13,4 @@ class AcercaDeController extends Controller
     	$pizzas=Pizza::all();
     	return view('pantalla.acercaDe',["pizzas"=>$pizzas]);
     }
-    function insistema(){
-    	$pizzas=Pizza::all();
-    	return view('pantalla.acercaDeSis',["pizzas"=>$pizzas]);
-    }
 }

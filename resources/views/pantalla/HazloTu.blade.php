@@ -110,7 +110,7 @@
 							<h1 class="text-white">
 								MENU INTERACTIVO PIZZERIA DIVINO SAPORI				
 							</h1>	
-							<p class="text-white link-nav"><a href="acercaDe.html">Principal</a>  <span class="lnr lnr-arrow-right"></span>  <a href="HazloTu.html">¡Hazlo Tu Mismo!</a></p>
+							<p class="text-white link-nav"><a href="{{('acercaDe')}}">Principal</a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{('HazloTu')}}">¡Hazlo Tu Mismo!</a></p>
 						</div>	
 					</div>
 				</div>
@@ -118,214 +118,53 @@
 			<!-- End banner Area -->			
 
 			<!-- Start menu-area Area -->
-			<br>
-				<div class="container">                		
-                  			<div class="row section-gap">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  						<a href=""><h1 class="text-center">BASE MARGARITA</h1></a>
-                  						<img class="img-fluid" src="imagenes/pizzas/basem.jpg" alt="" height="400px" width="400px">
-                  						<br>
-                  						<br>
-                  						<h4 class ="text-center">TAMAÑO DE LA PIZZA</h4>
-                  						<br>
-                           				<select class="nice-select" name="TamañoPizza">
-											<option>Selecciona un tamaño</option>
-											<option value="Pequeño">Pizza Pequeño</option>
-											<option value="Mediano">Pizza Mediano</option>
-											<option value="Grande">Pizza Grande</option>
-										</select>
-                  				</div>
-                  				
-    							<h6 class="text-center">
-    							<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-    								<h4 class="text-center">INGREDIENTES:</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/10.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="cebolla" value="gusta">  Cebolla
-    									<img src="imagenes/ingredientes/5.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="oregano" value="gusta">  Oregano<br>
-    									<img src="imagenes/ingredientes/6.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="tomate" value="gusta">  Tomate<br>
-    									<img src="imagenes/ingredientes/28(1).jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="pepperoni" value="gusta">  Pepperoni<br>
-    									<img src="imagenes/ingredientes/29.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="maiz" value="gusta">  Maiz<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-    							<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-    								<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/16.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="salchicha" value="gusta">  Salchicha
-    									<img src="imagenes/ingredientes/8.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="aceitunas" value="gusta">  Aceitunas<br>
-    									<img src="imagenes/ingredientes/17.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="piña" value="gusta">  Piña<br>
-    									<img src="imagenes/ingredientes/12.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="jamon" value="gusta">  Jamón<br>
-    									<img src="imagenes/ingredientes/2.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="pimientos" value="gusta">  Pimientos<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-    							<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-    								<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/7.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="bacon" value="gusta">  Bacon
-    									<img src="imagenes/ingredientes/27(1).jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="mozzarella" value="gusta">  Mozzarella<br>
-    									<img src="imagenes/ingredientes/31.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="mariscos" value="gusta">  Mariscos<br>
-    									<img src="imagenes/ingredientes/34.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="jamonSerrano" value="gusta">  JamonSerrano<br>
-    									<img src="imagenes/ingredientes/3.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="pollo" value="gusta">  PolloALaParrilla<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-    							<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-    								<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/13.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="atun" value="gusta">  Atún
-    									<img src="imagenes/ingredientes/15.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="carne" value="gusta">  CarneTernera<br>
-    									<img src="imagenes/ingredientes/4.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="champiñon" value="gusta">  Champiñon<br>
-    									<img src="imagenes/ingredientes/11.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="chorizo" value="gusta">  Chorizo<br>
-    									<img src="imagenes/ingredientes/19.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="QCabra" value="gusta">  QuesoDeCabra<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center">SALSAS:</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/26.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="salsa1" value="gusta">  Barbacoa<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center"></h4>
-									<div class="single-footer-widget">
-    									
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/27.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="salsa3" value="gusta">  Picante<br>
-    								</div>
-    							</div>
-    							</h6>
-
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/25.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="salsa2" value="gusta">  Tomate<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center"></h4>
-									<div class="single-footer-widget">
-    									
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center"></h4>
-									<div class="single-footer-widget">
-    									
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/28.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="salsa4" value="gusta">  Carbonara<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center"></h4>
-									<div class="single-footer-widget">
-    									
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center"></h4>
-									<div class="single-footer-widget">
-    									
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center"></h4>
-									<div class="single-footer-widget">
-    									
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/35.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="QParmesano" value="gusta">  QuesoParmesano<br>
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center"></h4>
-									<div class="single-footer-widget">
-    									
-    								</div>
-    							</div>
-    							</h6>
-    							<h6 class="text-center">
-                  				<div class="col-lg-3  col-md-4 col-sm-4 col-xs-4">
-                  					<h4 class="text-center">.</h4>
-									<div class="single-footer-widget">
-    									<img src="imagenes/ingredientes/1.jpg" height="60px" width="100px"><br>
-    									<input type="checkbox" name="QParmesano" value="gusta">  100%Mozzarella<br>
-    								</div>
-    							</div>
-    							</h6>
-    						</div>
-
- 						<div class="text-center">
+		
+		 <section class="menu-area section-gap" id="menu">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-70 col-lg-8">
+              <div class="title text-center">
+                <h1 class="mb-10">Escoge Los Ingredientes para tu Pizza...!</h1>
+                <br>
+                 <br>
+                  <br>    
+              </div>
               <h3 class="">PRECIO DE PEDIDO: <input type="textbox" name="ContadorPrecios"> Bs
-							<a href="" class="primary-btn">CONFIRMAR PEDIDO</h3></a>	
-						</div>
-                 </div> 
-				<br>
-        <br>
-        <br>
-			
+            </div>
+            <select class="nice-select" name="TamañoPizza">
+                <option>Selecciona un tamaño</option>
+                <option value="Pequeño">Pizza Pequeño</option>
+                <option value="Mediano">Pizza Mediano</option>
+                <option value="Grande">Pizza Grande</option>
+            </select>
+          </div>  
+          <div class="filters-content">
+                  <div class="row grid">
+                    @foreach( $ingredientes as $in)
+                       <div class="col-md-3 all breakfast">
+                         <div class="single-menu">
+                        <div class="title-wrap d-flex justify-content-between"> 
+                        <img src="{{asset('imagenes/ingredientes/'.$in->Imagen)}}" height="60px" width="100px"><br>
+                        <h4 class="price">{{$in->Precio}} Bs</h4>
+                        </div>  
+                         <h6>{{$in->Nombre}}</h6>    
+                        <br>
+                        <div class="text-center">
+                            <a href="" class="btn btn-success">+</a> <a href="" class="btn btn-danger">-</a> 
+                        </div>
+                        
+                       </div>                                  
+                     </div> 
+                  @endforeach                           
+                </div>
+          </div>         
+   </div>
+   <br>
+   <br>
+              <div class="text-center">
+              <a href="" class="primary-btn">CONFIRMAR PEDIDO</h3></a>  
+            </div> 
+    </section>
             <!-- End menu-area Area -->						
 				
 

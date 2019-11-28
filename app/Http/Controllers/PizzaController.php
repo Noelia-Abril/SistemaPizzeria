@@ -92,6 +92,7 @@ class PizzaController extends Controller
     {
         $pizza=Pizza::findOrFail($id);
         $pizza->estado='Inactivo';
+        $pizza->Existencias='0';
         $pizza->update();
         return Redirect::to('almacen/pizza');
     }

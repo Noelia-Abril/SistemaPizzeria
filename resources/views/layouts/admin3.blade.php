@@ -129,7 +129,7 @@
                       selección de Pizzas.
                     </h3>
                     <br>
-                     <a href="{{asset('menu.html')}}" class="primary-btn">MENU PREDETERMINADO</a>
+                     <a href="{{asset('pantalla/menu')}}" class="primary-btn">MENU PREDETERMINADO</a>
                 </div>
                 <br>
                <div class="col-lg-12 text-center">
@@ -140,7 +140,7 @@
                          coberturas y sabores.
                     </h3>
                     <br>
-                    <a href="{{asset('HazloTu.html')}}" class="primary-btn">¡HAZLO TU MISMO!</a>
+                    <a href="{{asset('pantalla/HazloTu')}}" class="primary-btn">¡HAZLO TU MISMO!</a>
            
               </div>
             </div>

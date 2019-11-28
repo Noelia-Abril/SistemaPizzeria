@@ -111,7 +111,7 @@
 							<h1 class="text-white">
 								MENU PIZZERIA DIVINO SAPORI				
 							</h1>	
-							<p class="text-white link-nav"><a href="{{asset('acercaDe.html')}}">Principal</a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{asset('menu.html')}}"> Menú</a></p>
+							<p class="text-white link-nav"><a href="{{asset('pantalla/acercaDe')}}">Principal</a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{asset('pantalla/menu')}}"> Menú</a></p>
 						</div>	
 					</div>
 				</div>
