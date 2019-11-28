@@ -1,4 +1,3 @@
-
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -17,19 +16,19 @@
 		<!-- Site Title -->
 		<title>Divino Sapori</title>
 
-		<link href="{{asset('https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet')}}"> 
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
 			CSS
 			============================================= -->
-			<link rel="stylesheet" href="{{asset('css/linearicons.css')}}">
-			<link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-			<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
-			<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
-			<link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}">				
-			<link rel="stylesheet" href="{{asset('css/nice-select.css')}}">				
-			<link rel="stylesheet" href="{{asset('css/animate.min.css')}}">
-			<link rel="stylesheet" href="{{asset('css/owl.carousel.css')}}">				
-			<link rel="stylesheet" href="{{asset('css/main.css')}}">
+			<link rel="stylesheet" href="css/linearicons.css">
+			<link rel="stylesheet" href="css/font-awesome.min.css">
+			<link rel="stylesheet" href="css/bootstrap.css">
+			<link rel="stylesheet" href="css/magnific-popup.css">
+			<link rel="stylesheet" href="css/jquery-ui.css">				
+			<link rel="stylesheet" href="css/nice-select.css">							
+			<link rel="stylesheet" href="css/animate.min.css">
+			<link rel="stylesheet" href="css/owl.carousel.css">				
+			<link rel="stylesheet" href="css/main.css">
 		</head>
 		<body>	
 			<header id="header">
@@ -46,27 +45,25 @@
 					<div class="row align-items-center justify-content-center d-flex">			
 				      <nav id="nav-menu-container">
 				        <ul class="nav-menu">
-				          <!--
 				          <li class="menu-has-children')}}"><a href="">Administracion</a>
                     <ul>
-                        <li><a href="{{asset('almacen/cliente')}}">Clientes</a></li>
-                        <li><a href="{{asset('almacen/pizza')}}">Pizzas</a></li>
-                        <li><a href="{{asset('almacen/ingrediente')}}">Ingredientes</a></li>
-                        <li><a href="{{asset('almacen/empleado')}}">Empleados</a></li>
+                        <li><a href="almacen/cliente">Clientes</a></li>
+                        <li><a href="almacen/pizza">Pizzas</a></li>
+                        <li><a href="almacen/ingrediente">Ingredientes</a></li>
+                        <li><a href="almacen/empleado">Empleados</a></li>
                     </ul>
                   </li>
-              		-->
 
-				          <li><a href="{{asset('acercaDe.html')}}">Acerca De</a></li>
+				          <li><a href="acercaDe.html">Acerca De</a></li>
 				          <li class="menu-has-children"><a href="">Menu</a>
 				            <ul>
-				            	  <li><a href="{{asset('menu.html')}}">Menu Pizzeria</a></li>
-								  <li><a href="{{asset('galeria.html')}}">Galeria Menu</a></li>											
+				            	  <li><a href="menu.html">Menu Pizzeria</a></li>
+								  <li><a href="galeria.html">Galeria Menu</a></li>											
 				            </ul>
 				          </li>
-				          <li><a href="{{asset('almacen/inicio/create')}}">Inicio</a></li>
-				          <li><a href="{{asset('HazloTu.html')}}">¡Hazlo Tu Mismo!</a></li>	
-				          <li><a href="{{asset('contacto.html')}}">Contacto</a></li>
+				          <li><a href="almacen/inicio/create">Inicio</a></li>
+				          <li><a href="HazloTu.html">¡Hazlo Tu Mismo!</a></li>	
+				          <li><a href="contacto.html">Contacto</a></li>
 				        </ul>
 				      </nav><!-- #nav-menu-container -->					      		  
 					</div>
@@ -80,74 +77,42 @@
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
-								MENU PIZZERIA DIVINO SAPORI				
+								Acerca de Nosotros				
 							</h1>	
-							<p class="text-white link-nav"><a href="{{asset('acercaDe.html')}}">Principal</a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{asset('menu.html')}}"> Menú</a></p>
+							<p class="text-white link-nav"><a href="acercaDe.html">Principal </a>  <span class="lnr lnr-arrow-right"></span>  <a href="acercaDe.html">Acerca de Nosotros</a></p>
 						</div>	
 					</div>
 				</div>
 			</section>
-			<!-- End banner Area -->			
-   
-   			<!-- Start menu-area Area -->
-            <section class="menu-area section-gap" id="menu">
-                <div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-70 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Pizzas que ofrece</h1>
-								<p>Con el exótico sabor Italiano.</p>
-                  				<br>		
+			<!-- End banner Area -->	
+
+			<!-- Start home-about Area -->
+			<section class="home-about-area section-gap">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 home-about-left">
+							<h1>Acerca De Nuestra Historia</h1>
+							<p><h5>
+								La pizzería DIVINO SAPORI es un establecimiento comercial en que se venden porciones de pizza. Solo dispone de un mostrador en el interior del cual el comerciante obtiene las pizzas cortadas en trozos. El cliente tiene la posibilidad de decidir el tipo de pizza entre las presentes así como la cantidad.La pizzería dispone de bancos y mesas para el consumo de pizza y bebidas compradas pero siempre en modalidad de autoservicio. La pizza en porciones es una modalidad de restaurante típicamente italiano.
+								</h5>
+							</p>
+							<div class="text-center">
+								<a href="almacen/inicio/create" class="primary-btn">COMENZAR PEDIDO</h3></a>	
 							</div>
-							<h3 class="">PRECIO DE PEDIDO: <input type="textbox" name="ContadorPrecios"> Bs</h3>
 							
 						</div>
-						<select class="nice-select" name="TamañoPizza">
-								<option>Selecciona un tamaño</option>
-								<option value="Pequeño">Pizza Pequeño</option>
-								<option value="Mediano">Pizza Mediano</option>
-								<option value="Grande">Pizza Grande</option>
-						</select>
-					</div>	
-                    <ul class="filter-wrap filters col-lg-12 no-padding">
-                        <li class="active" data-filter="*">Todo el Menú</li>
-                        <li data-filter=".breakfast">Sabor Italiano</li>
-                        <li data-filter=".lunch">Sabor Mexicano</li>
-                        <li data-filter=".budget-meal">Especialidades</li>
-                        <li data-filter=".buffet">Bebidas</li>
-                    </ul>
-        
-                    <div class="filters-content">
-                        <div class="row grid">
-                        	@foreach( $pizzas as $p)
-                            <div class="col-md-6 all breakfast">
-								<div class="single-menu">
-									<div class="title-wrap d-flex justify-content-between">	
-										<h4>{{$p->PNombre}}</h4>
-										<h4 class="price">{{$p->Precio}} Bs</h4>
-									</div>			
-									<p>
-										Salsa de Tomate, Queso 100% Mozzarella, Doble Pepperoni, Extra Mozzarella y Orégano
-									</p>
-									<br>
-									<div class="text-center">
-										<a href="" class="primary-btn">AGREGAR</a>  <a href="" class="primary-btn">ELIMINAR</a>
-									</div> 
-								</div>		                              
-                            </div> 
-                            @endforeach                           
-                        </div>
-                    </div>
-                    
-                </div>
-                <br>
-            	<div class="text-center">
-					<a href="" class="primary-btn">CONFRMAR PEDIDO</h3></a>	
-				</div>
-            </section>
-            <!-- End menu-area Area -->						
+						<div class="col-lg-6 home-about-right">
+							<img class="img-fluid" src="pizzeria/FotoPDS.jpg" alt="">
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End home-about Area -->	
+
+			<!-- End review Area -->				
+
 			<!-- start footer Area -->		
-						<footer class="footer-area">
+			<footer class="footer-area">
 				<div class="footer-widget-wrap">
 					<div class="container">
 						<div class="row section-gap">
@@ -222,20 +187,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 			</footer>
 			<!-- End footer Area -->	
 
-			<script src="{{asset('js/vendor/jquery-2.2.4.min.js')}}"></script>
-			<script src="{{asset('js/popper.min.js')}}"></script>
-			<script src="{{asset('js/vendor/bootstrap.min.js')}}"></script>			
-			<script src="{{asset('https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA')}}"></script>		
- 			<script src="{{asset('js/jquery-ui.js')}}"></script>					
-  			<script src="{{asset('js/easing.min.js')}}"></script>			
-			<script src="{{asset('js/hoverIntent.js')}}"></script>
-			<script src="{{asset('js/superfish.min.js')}}"></script>	
-			<script src="{{asset('js/jquery.ajaxchimp.min.js')}}"></script>
-			<script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>			
-			<script src="{{asset('js/jquery.nice-select.min.js')}}"></script>				
-			<script src="{{asset('js/owl.carousel.min.js')}}"></script>			
-            <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>						
-			<script src="{{asset('js/mail-script.js')}}"></script>	
-			<script src="{{asset('js/main.js')}}"></script>	
+			<script src="js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="js/popper.min.js"></script>
+			<script src="js/vendor/bootstrap.min.js"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>		
+ 			<script src="js/jquery-ui.js"></script>					
+  			<script src="js/easing.min.js"></script>			
+			<script src="js/hoverIntent.js"></script>
+			<script src="js/superfish.min.js"></script>	
+			<script src="js/jquery.ajaxchimp.min.js"></script>
+			<script src="js/jquery.magnific-popup.min.js"></script>						
+			<script src="js/jquery.nice-select.min.js"></script>					
+			<script src="js/owl.carousel.min.js"></script>			
+            <script src="js/isotope.pkgd.min.js"></script>								
+			<script src="js/mail-script.js"></script>	
+			<script src="js/main.js"></script>	
 		</body>
 	</html>

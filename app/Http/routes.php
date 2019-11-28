@@ -19,7 +19,9 @@ Route::resource('almacen/pizza','PizzaController');
 Route::resource('almacen/ingrediente','IngredienteController');
 Route::resource('almacen/inicio','InicioController');
 Route::resource('almacen/empleado','EmpleadoController');
-Route::get('menu','menuController@index');
+Route::resource('venta/menu','menuController@index');
+Route::resource('pantalla/acercaDe','AcercaDeController@index');
 Route::auth();
 Route::get('/home', 'HomeController@index');
 
+//Route::get('acercaDe','AcercaDeController@index'); cuando esta fuera solo en views
