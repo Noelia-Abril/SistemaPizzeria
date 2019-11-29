@@ -16,8 +16,7 @@ class menuController extends Controller
    
     function index()
     {
-    	$pizzas=Pizza::all();
-    	//->where('estado','!=','Inactivo');
+    	$pizzas=Pizza::where('estado','!=','Inactivo')->get();
     	return view('pantalla.menu',["pizzas"=>$pizzas]);
     }
 }

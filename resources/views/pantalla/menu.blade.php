@@ -155,9 +155,7 @@
 										<h4>{{$p->PNombre}}</h4>
 										<h4 class="price">{{$p->Precio}} Bs</h4>
 									</div>			
-									<p>
-										Salsa de Tomate, Queso 100% Mozzarella, Doble Pepperoni, Extra Mozzarella y Orégano
-									</p>
+									<p>{{$p->Descripcion}}</p>
 									<br>
 									<div class="text-center">
 										<a href="" class="primary-btn">AGREGAR</a>  <a href="" class="primary-btn">ELIMINAR</a>
