@@ -9,14 +9,17 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Input;
 use SPizzeria\Http\Requests\PizzaFormRequest;
 use SPizzeria\Pizza;
-use DB;
 
 class menuController extends Controller
 {
    
     function index()
     {
-    	$pizzas=Pizza::where('estado','!=','Inactivo')->get();
+    	$pizzas=Pizza::where('estado','!=','Inactivo')
+		//->where('Precio','<=','60.00')
+    	->get();
     	return view('pantalla.menu',["pizzas"=>$pizzas]);
+    	
     }
+
 }
