@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('pantalla/acercaDe');
 });
+
 Route::get('login', function () {
     return view('auth/login');
 });
@@ -26,8 +27,10 @@ Route::resource('pantalla/menu','menuController@index');
 Route::resource('pantalla/acercaDe','AcercaDeController@index');
 Route::resource('pantalla/contacto','ContactoController@index');
 Route::resource('pantalla/galeria','GaleriaController@index');
+
 Route::resource('pantalla/HazloTu','HazloTuController@index');
 Route::auth();
 Route::get('/home', 'HomeController@index');
+
 
 //Route::get('acercaDe','AcercaDeController@index'); cuando esta fuera solo en views

@@ -129,9 +129,9 @@
                  <br>
                   <br>    
               </div>
-              <h3 class="">PRECIO DE PEDIDO: <input type="textbox" name="ContadorPrecios"> Bs
+              <h3 class="">PRECIO DE PEDIDO: <label id="costo"></label> Bs
             </div>
-            <select class="nice-select" name="TamañoPizza">
+            <select id="tpizza" class="nice-select" name="TamañoPizza">
                 <option>Selecciona un tamaño</option>
                 <option value="Pequeño">Pizza Pequeño</option>
                 <option value="Mediano">Pizza Mediano</option>
@@ -150,7 +150,8 @@
                          <h6>{{$in->Nombre}}</h6>    
                         <br>
                         <div class="text-center">
-                            <a href="" class="btn btn-success">+</a> <a href="" class="btn btn-danger">-</a> 
+                           <h3 class=""><label id="ingrC{{$in->idIngrediente}}">0</label>
+                            <a style="color: white" data-precio="{{$in->Precio}}" data-cod="{{$in->idIngrediente}}" class="sum btn btn-success">+</a> <a style="color: white" data-precio="{{$in->Precio}}" class=" rest btn btn-danger">-</a> 
                         </div>
                         
                        </div>                                  
@@ -259,5 +260,35 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
             <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>           
       <script src="{{asset('js/mail-script.js')}}"></script>  
       <script src="{{asset('js/main.js')}}"></script> 
+      <script type="text/javascript">
+      $('#costo').html('0');
+      var suma=0;
+      var con=0;
+      $('.sum').click(function(e){
+          e.preventDefault();
+          //alert();
+          //suma=suma+$(this).data("precio");
+          suma=$(this).data("precio");
+          cod=$(this).data("cod");
+          con=con+1;
+          $('#ingrC'+cod).html(con);
+          //$('#costo').html(con*suma);
+      });        
+      
+      $('.rest').click(function(e){
+          e.preventDefault();
+          //alert();
+          if(con!=0)
+      {
+          suma=$(this).data("precio");
+          con=con-1;
+          $('#ingrC').html(con);
+          $('#costo').html(con*suma);
+      }});
+      $('#tpizza').change(function(e){
+        e.preventDefault();
+        //alert($('#tpizza').val());
+      });
+      </script>
 		</body>
 	</html>
