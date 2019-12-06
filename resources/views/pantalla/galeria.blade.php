@@ -64,7 +64,7 @@
 					<div class="container">
 				  		<div class="row justify-content-center">
 						      <div id="logo">
-						        <a href="{{asset('index.html')}}"><img src="{{asset('pizzeria/logoDS.jpeg')}}" alt="" title="" style="width: 90px"/></a>
+						        <a href="{{asset('pantalla/acercaDe')}}"><img src="{{asset('pizzeria/logoDS.jpeg')}}" alt="" title="" style="width: 90px"/></a>
 						      </div>
 				  		</div>			  					
 					</div>
@@ -131,7 +131,7 @@
                     
                     <ul class="filter-wrap filters col-lg-12 no-padding">
                         <li class="active" data-filter="*">Todo el Menú</li>
-                        <li data-filter=".75.00">Sabor Italiano</li>
+                        <li data-filter=".italiano">Sabor Italiano</li>
                         <li data-filter=".mexicano">Sabor Mexicano</li>
                         <li data-filter=".especial">Especialidades</li>
                         <li data-filter=".bebida">Bebidas</li>
@@ -140,7 +140,7 @@
                     <div class="filters-content">
                         <div class="row grid">
                         	@foreach( $pizzas as $p)
-                            <div class="col-lg-4 col-md-6 col-sm-6 all {{$p->Precio}} ">
+                            <div class="col-lg-4 col-md-6 col-sm-6 all italiano mexicano especial bebida">
                             	<div class="single-gallery">
                             		<img class="img-fluid" src="{{asset('imagenes/pizzas/'.$p->Imagen)}}" alt="">
 									<a href="blog-single.html"><h4>   {{$p->PNombre}}</h4></a>

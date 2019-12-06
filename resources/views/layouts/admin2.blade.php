@@ -64,7 +64,7 @@
           <div class="container">
               <div class="row justify-content-center">
                   <div id="logo">
-                    <a href="{{asset('index.html')}}"><img src="{{asset('pizzeria/logoDS.jpeg')}}" alt="" title="" style="width: 90px"/></a>
+                    <a href="{{asset('pantalla/acercaDe')}}"><img src="{{asset('pizzeria/logoDS.jpeg')}}" alt="" title="" style="width: 90px"/></a>
                   </div>
               </div>                  
           </div>
