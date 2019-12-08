@@ -32,7 +32,7 @@
 					<td>{{ $v->NombreIngrediente}}</td>
 					<td>{{ $v->Cant}}</td>
 					<td>{{ $v->Descuento}}</td>
-					<td>{{ $v->Subtotal}}</td>
+					<td>{{ $v->SubTotal}}</td>
 					<td>{{ $v->Fecha}}</td>
 					<td>{{ $v->Total}}</td>
 				</tr>

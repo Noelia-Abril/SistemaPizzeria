@@ -143,8 +143,8 @@
                         	@foreach( $pizzas as $p)
                             <div class="col-lg-4 col-md-6 col-sm-6 all italiano mexicano especial bebida">
                             	<div class="single-gallery">
-                            		<img class="img-fluid" src="{{asset('imagenes/pizzas/'.$p->Imagen)}}" alt="">
-									<a href="blog-single.html"><h4>   {{$p->PNombre}}</h4></a>
+                            		<a href="{{('menu')}}"><img class="img-fluid" src="{{asset('imagenes/pizzas/'.$p->Imagen)}}" alt=""></a>
+									<a><h4>   {{$p->PNombre}}</h4></a>
 								</div>	                          
                             </div>                           
                              @endforeach                        
