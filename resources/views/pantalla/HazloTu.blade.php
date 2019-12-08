@@ -80,6 +80,7 @@
                         <li><a href="{{asset('almacen/pizza')}}">Pizzas</a></li>
                         <li><a href="{{asset('almacen/ingrediente')}}">Ingredientes</a></li>
                         <li><a href="{{asset('almacen/empleado')}}">Empleados</a></li>
+                        <li><a href="{{asset('almacen/venta')}}">Ventas</a></li>
                     </ul>
                   </li>
                       @endif
@@ -133,9 +134,9 @@
             </div>
             <select id="tpizza" class="nice-select" name="TamañoPizza">
                 <option>Selecciona un tamaño</option>
-                <option value="Pequeño">Pizza Pequeño</option>
-                <option value="Mediano">Pizza Mediano</option>
-                <option value="Grande">Pizza Grande</option>
+                <option value="15">Pizza Pequeño</option>
+                <option value="25">Pizza Mediano</option>
+                <option value="35">Pizza Grande</option>
             </select>
           </div>  
           <div class="filters-content">
@@ -146,12 +147,12 @@
                         <div class="title-wrap d-flex justify-content-between"> 
                         <img src="{{asset('imagenes/ingredientes/'.$in->Imagen)}}" height="60px" width="100px"><br>
                         <h4 class="price">{{$in->Precio}} Bs</h4>
-                        </div>  
+                        </div>    
                          <h6>{{$in->Nombre}}</h6>    
                         <br>
                         <div class="text-center">
                            <h3 class=""><label id="ingrC{{$in->idIngrediente}}">0</label>
-                            <a style="color: white" data-precio="{{$in->Precio}}" data-cod="{{$in->idIngrediente}}" class="sum btn btn-success">+</a> <a style="color: white" data-precio="{{$in->Precio}}" class=" rest btn btn-danger">-</a> 
+                            <a style="color: white" data-precio="{{$in->Precio}}" data-cod="{{$in->idIngrediente}}" class="sum btn btn-success">+</a> <a style="color: white" data-precio="{{$in->Precio}}" data-cod="{{$in->idIngrediente}}" class=" rest btn btn-danger">-</a> 
                         </div>
                         
                        </div>                                  
@@ -264,6 +265,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
       $('#costo').html('0');
       var suma=0;
       var con=0;
+      var tot=0;
       $('.sum').click(function(e){
           e.preventDefault();
           //alert();
@@ -272,9 +274,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
           cod=$(this).data("cod");
           con=con+1;
           $('#ingrC'+cod).html(con);
-          //$('#costo').html(con*suma);
-      });        
-      
+          tot=con*suma;
+      }); 
       $('.rest').click(function(e){
           e.preventDefault();
           //alert();
@@ -282,12 +283,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
       {
           suma=$(this).data("precio");
           con=con-1;
-          $('#ingrC').html(con);
-          $('#costo').html(con*suma);
+          $('#ingrC'+cod).html(con);
+          tot=con*suma;
       }});
+      var ptam;
       $('#tpizza').change(function(e){
         e.preventDefault();
-        //alert($('#tpizza').val());
+        ptam=$('#tpizza').val();
+        $('#costo').html(ptam);
       });
       </script>
 		</body>

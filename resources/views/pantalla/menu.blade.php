@@ -81,6 +81,7 @@
                         <li><a href="{{asset('almacen/pizza')}}">Pizzas</a></li>
                         <li><a href="{{asset('almacen/ingrediente')}}">Ingredientes</a></li>
                         <li><a href="{{asset('almacen/empleado')}}">Empleados</a></li>
+                        <li><a href="{{asset('almacen/venta')}}">Ventas</a></li>
                     </ul>
                   </li>
               				@endif
@@ -128,14 +129,14 @@
 								<p>Con el exótico sabor Italiano.</p>
                   				<br>		
 							</div>
-							<h3 class="">PRECIO DE PEDIDO: <input type="textbox" name="ContadorPrecios"> Bs</h3>
+							<h3 class="">PRECIO DE PEDIDO: <label id="costo"></label> Bs</h3>
 							
 						</div>
-						<select class="nice-select" name="TamañoPizza">
+						<select id="tpizza" class="nice-select" name="TamañoPizza">
 								<option>Selecciona un tamaño</option>
-								<option value="Pequeño">Pizza Pequeño</option>
-								<option value="Mediano">Pizza Mediano</option>
-								<option value="Grande">Pizza Grande</option>
+								<option value="15">Pizza Pequeño</option>
+								<option value="25">Pizza Mediano</option>
+								<option value="35">Pizza Grande</option>
 						</select>
 					</div>	
                     <ul class="filter-wrap filters col-lg-12 no-padding">
@@ -157,7 +158,7 @@
 									<p>{{$p->Descripcion}}</p>
 									<br>
 									<div class="text-center">
-										<a href="" class="primary-btn">AGREGAR</a>  <a href="" class="primary-btn">ELIMINAR</a>
+										<a style="color: white" data-precio="{{$p->Precio}}" data-cod="{{$p->Cod_Pz}}" class="sum primary-btn">AGREGAR</a>  <a  style="color: white" data-precio="{{$p->Precio}}" data-cod="{{$p->Cod_Pz}}" class=" rest primary-btn">ELIMINAR</a>
 									</div> 
 								</div>		                              
                             </div>
@@ -263,5 +264,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
             <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>						
 			<script src="{{asset('js/mail-script.js')}}"></script>	
 			<script src="{{asset('js/main.js')}}"></script>	
-		</body>
-	</html>
+			<script type="text/javascript">
+     		 $('#costo').html('0');
+      			var suma=0;
+      			var tot;
+      			var ptam;
+			      $('.sum').click(function(e){
+			          e.preventDefault();
+			          //alert();
+			          //suma=suma+$(this).data("precio");
+			          suma=suma+parseFloat($(this).data("precio"));
+			          cod=$(this).data("cod");
+			          tot=suma+ptam;
+			            $('#costo').html(tot);
+			      }); 
+			      $('.rest').click(function(e){
+			          e.preventDefault();
+			          //alert();
+			          
+			          cod=$(this).data("cod");
+			          if(suma!=0)
+			          {
+			          	suma=suma-parseFloat($(this).data("precio"));
+			          $('#costo').html(suma);
+			      
+			      }});
+			      $('#tpizza').change(function(e){
+			        e.preventDefault();
+			        ptam=parseInt($('#tpizza').val());
+			        $('#costo').html(ptam);
+			      });
+			
+		    </script>
+	</body>
+</html>

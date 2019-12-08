@@ -4,12 +4,12 @@ namespace SPizzeria\Http\Requests;
 
 use SPizzeria\Http\Requests\Request;
 
-class IngredienteFormRequest extends Request
+class VentaFormRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
      *
-     *@return bool
+     * @return bool
      */
     public function authorize()
     {
@@ -24,11 +24,12 @@ class IngredienteFormRequest extends Request
     public function rules()
     {
         return [
-            'Nombre'=>'required|max:100',
-            'Imagen'=>'mimes:jpeg,png,jpg',
-            'Cantidad'=>'required',
-            'Precio'=>'required',
-            'Pizza_Cod_Pz'=>'required'
+            'Descuento'=>'required',
+            'SubTotal'=>'required',
+            'Pedido_NumPedido'=>'required',
+            'Cliente_IdCliente'=>'required',
+            'Pizza_Cod_Pz'=>'required',
+            'Ingrediente_idIngrediente'=>'required'
         ];
     }
 }
