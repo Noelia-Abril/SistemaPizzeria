@@ -88,11 +88,7 @@
 
 
 				          <li><a href="{{asset('pantalla/acercaDe')}}">Acerca De</a></li>
-				          <li class="menu-has-children"><a href="">Menu</a>
-				            <ul>
-				            	  <li><a href="{{asset('pantalla/menu')}}">Menu Pizzeria</a></li>
-								  <li><a href="{{asset('pantalla/galeria')}}">Galeria Menu</a></li>											
-				            </ul>
+				          <li><a href="{{asset('pantalla/menu')}}">Menu</a></li>
 				          </li>
 				          <li><a href="{{asset('almacen/inicio/create')}}">Inicio</a></li>
 				          <li><a href="{{asset('pantalla/HazloTu')}}">¡Hazlo Tu Mismo!</a></li>	
@@ -157,6 +153,10 @@
 									</div>			
 									<p>{{$p->Descripcion}}</p>
 									<br>
+									<div class="text-center">
+                            		<a ><img class="img-fluid" style="height: 200px" style="width: 5px" src="{{asset('imagenes/pizzas/'.$p->Imagen)}}" ></a>
+								</div>
+								<br>
 									<div class="text-center">
 										<a style="color: white" data-precio="{{$p->Precio}}" data-cod="{{$p->Cod_Pz}}" class="sum primary-btn">AGREGAR</a>  <a  style="color: white" data-precio="{{$p->Precio}}" data-cod="{{$p->Cod_Pz}}" class=" rest primary-btn">ELIMINAR</a>
 									</div> 

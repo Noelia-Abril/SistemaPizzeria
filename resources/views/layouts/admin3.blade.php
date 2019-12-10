@@ -86,12 +86,7 @@
                       @endif
 
                   <li><a href="{{asset('pantalla/acercaDe')}}">Acerca De</a></li>
-                  <li class="menu-has-children"><a href="">Menu</a>
-                    <ul>
-                        <li><a href="{{asset('pantalla/menu')}}">Menu Pizzeria</a></li>
-                  <li><a href="{{asset('pantalla/galeria')}}">Galeria Menu</a></li>                     
-                    </ul>
-                  </li>
+                  <li><a href="{{asset('pantalla/menu')}}">Menu</a></li>
                   <li><a href="{{asset('almacen/inicio/create')}}">Inicio</a></li>
                   <li><a href="{{asset('pantalla/HazloTu')}}">¡Hazlo Tu Mismo!</a></li> 
                   <li><a href="{{asset('pantalla/contacto')}}">Contacto</a></li>
