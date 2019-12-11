@@ -14,7 +14,7 @@
       $pdf->setPrintFooter(false);
       $pdf->SetMargins(20, 20, 20, false); 
       $pdf->SetAutoPageBreak(true, 20); 
-      $pdf->SetFont('Helvetica', '', 10,);
+      $pdf->SetFont('Helvetica', '', 10);
       //add page
       $pdf->AddPage();
 //add content

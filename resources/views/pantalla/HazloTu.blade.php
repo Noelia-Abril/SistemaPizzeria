@@ -129,9 +129,9 @@
             </div>
             <select id="tpizza" class="nice-select" name="TamañoPizza">
                 <option>Selecciona un tamaño</option>
-                <option value="15">Pizza Pequeño</option>
-                <option value="25">Pizza Mediano</option>
-                <option value="35">Pizza Grande</option>
+                <option value="1">Pizza Pequeño</option>
+                <option value="1.5">Pizza Mediano</option>
+                <option value="2">Pizza Grande</option>
             </select>
           </div>  
           <div class="filters-content">
@@ -146,7 +146,7 @@
                          <h6>{{$in->Nombre}}</h6>    
                         <br>
                         <div class="text-center">
-                           <h3 class=""><label id="ingrC{{$in->idIngrediente}}">0</label>
+                           <h3 class=""><label id="ingrC{{$in->idIngrediente}}" value="0">0</label>
                             <a style="color: white" data-precio="{{$in->Precio}}" data-cod="{{$in->idIngrediente}}" class="sum btn btn-success">+</a> <a style="color: white" data-precio="{{$in->Precio}}" data-cod="{{$in->idIngrediente}}" class=" rest btn btn-danger">-</a> 
                         </div>
                         
@@ -264,28 +264,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
       $('.sum').click(function(e){
           e.preventDefault();
           //alert();
-          //suma=suma+$(this).data("precio");
-          suma=$(this).data("precio");
+          suma=suma+ptam*$(this).data("precio");
           cod=$(this).data("cod");
           con=con+1;
-          $('#ingrC'+cod).html(con);
-          tot=con*suma;
+          //$('#ingrC'+cod).html(con);
+          $('#costo').html(suma);
       }); 
       $('.rest').click(function(e){
           e.preventDefault();
           //alert();
           if(con!=0)
       {
-          suma=$(this).data("precio");
+          suma=suma-$(this).data("precio");
+          cod=$(this).data("cod");
           con=con-1;
           $('#ingrC'+cod).html(con);
-          tot=con*suma;
+          $('#costo').html(suma);
       }});
-      var ptam;
+      var ptam=1;
       $('#tpizza').change(function(e){
         e.preventDefault();
         ptam=$('#tpizza').val();
-        $('#costo').html(ptam);
       });
       </script>
 		</body>
