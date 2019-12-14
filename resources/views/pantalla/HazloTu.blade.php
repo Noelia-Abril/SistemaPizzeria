@@ -268,22 +268,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
       });
       $('.sum').click(function(e){
           e.preventDefault();
-          alert($("#IngrC")).text();
+          //alert($("#IngrC")).text();
           suma=suma+ptam*$(this).data("precio");
           cod=$(this).data("cod");
-          con=con+1;
-          //$('#ingrC'+cod).html(con);
+          con=$('#ingrC'+cod).text()-(-1);
+          $('#ingrC'+cod).html(con);
           $('#costo').html(suma);
       }); 
       $('.rest').click(function(e){
           e.preventDefault();
           //alert();
-          suma=suma-$(this).data("precio");
-          if(suma>=0)
+          if($('#costo').text()-0>$(this).data("precio") && $('#ingrC'+cod).text()-0>0)
       {
+          suma=suma-$(this).data("precio");
           cod=$(this).data("cod");
-          con=con-1;
-          //$('#ingrC'+cod).html(con);
+          con=$('#ingrC'+cod).text()-1;
+          $('#ingrC'+cod).html(con);
           $('#costo').html(suma);
       }
       else
