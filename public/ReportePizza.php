@@ -6,7 +6,7 @@
   if(isset($_POST['create_pdf']))
   {
       require_once('library/tcpdf.php');
-      $pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
+      $pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
 	    $pdf->SetCreator(PDF_CREATOR);
       $pdf->SetAuthor('Divino Sapori');
       $pdf->SetTitle($_POST['reporte_name']);

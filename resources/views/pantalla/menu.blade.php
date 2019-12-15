@@ -281,14 +281,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Todos
 			      $('.rest').click(function(e){
 			          e.preventDefault();
 			          //alert();
-			          
-			          cod=$(this).data("cod");
-			          if(suma!=0)
+			          if($('#costo').text()-0>$(this).data("precio"))
 			          {
-			          	suma=suma-parseFloat($(this).data("precio"));
-			          $('#costo').html(suma);
-			      
-			      }});
+			          	suma=suma-$(this).data("precio");
+			          	cod=$(this).data("cod");
+			         	 $('#costo').html(suma);
+			   		   }
+			   		   else
+      					{
+        					suma=0;
+         					$('#costo').html(suma);
+      					}
+			  		});
 			      $('#tpizza').change(function(e){
 			        e.preventDefault();
 			        ptam=parseInt($('#tpizza').val());

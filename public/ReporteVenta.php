@@ -1,12 +1,13 @@
 <?php
   require_once('conexion/conexion.php');	
-  $ventas = 'SELECT * FROM detalle ORDER BY IdDetalle ASC';	
+  $ventas = 'SELECT d.IdDetalle,d.Pedido_NumPedido,c.Nombre as NombreCliente ,p.PNombre as NombrePizza,i.Nombre as NombreIngrediente,i.Cantidad as Cant,d.Descuento,d.SubTotal,pd.Fecha as Fecha,pd.Total as Total FROM detalle as d, pizza as p, ingrediente as i, pedido as pd, cliente as c WHERE d.Ingrediente_idIngrediente = i.idIngrediente AND d.Pedido_NumPedido=pd.NumPedido AND d.Cliente_IdCliente=c.IdCliente AND d.Pizza_Cod_Pz=p.Cod_Pz ORDER BY IdDetalle ASC';	  
+
 	$venta=$mysqli->query($ventas);
   //include library
   if(isset($_POST['create_pdf']))
   {
       require_once('library/tcpdf.php');
-      $pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
+      $pdf = new TCPDF('L', 'mm', 'A4', true, 'UTF-8', false);
 	    $pdf->SetCreator(PDF_CREATOR);
       $pdf->SetAuthor('Divino Sapori');
       $pdf->SetTitle($_POST['reporte_name']);
@@ -39,7 +40,8 @@ $content = '';
           </tr>
         </thead>
 	';
-	while ($v=$venta->fetch_assoc()) { 
+	while ($v=$venta->fetch_assoc()) {
+      if($v['IdDetalle']!='0'){  $color= '#f5f5f5'; }else{ $color= '#fbb2b2'; } 
 	$content .= '
 		<tr bgcolor="'.$color.'">
             <td>'.$v['IdDetalle'].'</td>
@@ -112,7 +114,7 @@ $pdf->Output('RVentas.pdf','I');
             <td><?php echo $v['Pedido_NumPedido']; ?></td>
             <td><?php echo $v['NombreCliente']; ?></td>
             <td><?php echo $v['NombrePizza']; ?></td>
-            <td><?php echo $v['NombreINgrediente']; ?></td>
+            <td><?php echo $v['NombreIngrediente']; ?></td>
             <td><?php echo $v['Cant']; ?></td>
             <td><?php echo $v['Descuento']; ?></td>
             <td><?php echo $v['SubTotal']; ?></td>

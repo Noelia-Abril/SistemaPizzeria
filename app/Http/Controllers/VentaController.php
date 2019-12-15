@@ -27,7 +27,7 @@ class VentaController extends Controller
             ->join('cliente as c','d.Cliente_IdCliente','=','c.IdCliente')
             ->join('pedido as pd','d.Pedido_NumPedido','=','pd.NumPedido')
             ->join('ingrediente as i','d.Ingrediente_idIngrediente','=','i.idIngrediente')
-            ->select('d.IdDetalle','d.Pedido_NumPedido','c.Nombre as NombreCliente' ,'p.PNombre as NombrePizza','i.Nombre as NombreIngrediente','i.Cantidad as Cant','d.Descuento','d.Subtotal','pd.Fecha as Fecha','pd.Total as Total')
+            ->select('d.IdDetalle','d.Pedido_NumPedido','c.Nombre as NombreCliente' ,'p.PNombre as NombrePizza','i.Nombre as NombreIngrediente','i.Cantidad as Cant','d.Descuento','d.SubTotal','pd.Fecha as Fecha','pd.Total as Total')
             ->where('c.Nombre','LIKE','%'.$query.'%')
             ->orderBy('d.IdDetalle','asc')
             ->paginate(5);
