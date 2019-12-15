@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2019 a las 20:47:06
+-- Tiempo de generación: 15-12-2019 a las 01:04:15
 -- Versión del servidor: 10.4.8-MariaDB
 -- Versión de PHP: 7.3.11
 
@@ -47,8 +47,7 @@ INSERT INTO `cliente` (`IdCliente`, `CI`, `Nombre`) VALUES
 (7, '7895643', 'Sandro Troncoso Kaisler'),
 (8, '7269548', 'Fernanda  Hilda Suxo Fernandez'),
 (9, '1651987', 'Camila Perez'),
-(10, '4863021', 'Pepino Cortez'),
-(11, '0', 'fgxddtdhgfxhfhg');
+(10, '4863021', 'Pepino Cortez');
 
 -- --------------------------------------------------------
 
@@ -65,6 +64,15 @@ CREATE TABLE `detalle` (
   `Pizza_Cod_Pz` varchar(15) COLLATE utf8mb4_spanish2_ci NOT NULL,
   `Ingrediente_idIngrediente` varchar(12) COLLATE utf8mb4_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `detalle`
+--
+
+INSERT INTO `detalle` (`IdDetalle`, `Descuento`, `SubTotal`, `Pedido_NumPedido`, `Cliente_IdCliente`, `Pizza_Cod_Pz`, `Ingrediente_idIngrediente`) VALUES
+(1, 0.00, '70.00', 1, 8, '5454', '761'),
+(2, 0.00, '70.00', 1, 8, '2258', '919'),
+(3, 0.10, '60.00', 2, 10, '1245', '225');
 
 -- --------------------------------------------------------
 
@@ -169,6 +177,14 @@ CREATE TABLE `pedido` (
   `Cliente_IdCliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `pedido`
+--
+
+INSERT INTO `pedido` (`NumPedido`, `Tam_Pizza`, `Fecha`, `Total`, `Cliente_IdCliente`) VALUES
+(1, 'Mediano', '2019-12-10', '70.00', 8),
+(2, 'Pequeño', '2019-12-10', '60.00', 10);
+
 -- --------------------------------------------------------
 
 --
@@ -219,7 +235,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Divino Sapori', 'pzdivinosapori@gmail.com', '$2y$10$IPpeujQk4IiQ1Kkjfpf09ee8kVxXvb/n7.WT8TnD.IspGUvMeawXa', 'DqUD7U8zVjnwFER8EbHNnThrKgjyGN0xtAUdd8EwzcKaPY0DfTUxjmzRCzRF', '2019-11-12 02:20:21', '2019-11-24 04:54:13'),
+(2, 'Divino Sapori', 'pzdivinosapori@gmail.com', '$2y$10$IPpeujQk4IiQ1Kkjfpf09ee8kVxXvb/n7.WT8TnD.IspGUvMeawXa', 'hIfmQ8MvthQlZQBoYUsBec8hBULTyTZREKullNipOTfg0Q1EfdRleenCsqSh', '2019-11-12 02:20:21', '2019-12-15 00:02:18'),
 (3, 'Empleado Pizzeria', 'EmpleadoDS@hotmail.com', '$2y$10$T695UIDl7.sOAOzvR6912eRWEXmERtZTzUYCEP4VmNHu7Fa2CeNUu', 'jqiiZT6g6QbApbI6Hni4o9BJVNB3wJ9lu1HZ7CvBcOADpvQZNVBl5RBSTdaR', '2019-11-21 03:20:17', '2019-11-24 20:24:46');
 
 --
@@ -297,7 +313,7 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `detalle`
 --
 ALTER TABLE `detalle`
-  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
@@ -309,7 +325,7 @@ ALTER TABLE `empleado`
 -- AUTO_INCREMENT de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `NumPedido` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `NumPedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
