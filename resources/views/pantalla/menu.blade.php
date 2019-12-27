@@ -130,9 +130,9 @@
 						</div>
 						<select id="tpizza" class="nice-select" name="TamañoPizza">
 								<option>Selecciona un tamaño</option>
-								<option value="15">Pizza Pequeño</option>
-								<option value="25">Pizza Mediano</option>
-								<option value="35">Pizza Grande</option>
+								<option value="0">Pizza Pequeño</option>
+								<option value="15">Pizza Mediano</option>
+								<option value="25">Pizza Grande</option>
 						</select>
 					</div>	
                     <ul class="filter-wrap filters col-lg-12 no-padding">
